@@ -71,7 +71,7 @@ export default class Main extends React.Component {
 
      {this.state.albums.map(album => {
       return (
-        <div className="col-xs-4">
+        <div className="col-xs-4" key={album.id}>
           <a className="thumbnail" href="#">
             <img src={album.imageUrl}/>
             <div className="caption">
