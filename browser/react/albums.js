@@ -5,10 +5,14 @@ import React from 'react';
 //   constructor(props) {
 //   super(props);
 // }
+// It can also be written as class Albums extends React.Component { render() return}
 function Albums(props) {
   return (
-  <div>
-  {props.albums.map(album => {
+
+  <div className="col-xs-10">
+  <h3>Albums</h3>
+    <div className="row">
+    {props.albums.map(album => {
      return <div className="col-xs-4" key={album.id}>
       <a className="thumbnail" href="#">
         <img src={album.imageUrl}/>
@@ -20,7 +24,8 @@ function Albums(props) {
         </div>
       </a>
     </div>
-  })}
+    })}
+    </div>
   </div>
   );
 }
