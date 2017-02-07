@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Albums from './albums.js'
+import axios from 'axios';
 
 const fakeAlbums = [
   {
@@ -70,4 +71,14 @@ export default class Main extends React.Component {
   }
 }
 
+
+
+const toJson = response => response.data;
+const log = console.log.bind(console);
+const logError = console.error.bind(console);
+
+axios.get('api/albums')
+  .then(toJson)
+  .then(log)
+  .catch(logError);
 // <div id="main" className="container-fluid"
