@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import Lyrics from '../components/Lyrics';
-import axios from 'axios';
-
 import {setLyrics, fetchLyrics} from '../action-creators/lyrics';
 import store from '../store';
 
@@ -40,7 +38,6 @@ export default class extends Component {
   }
 
   handleSubmit() {
-    console.log('bla')
     if (this.state.artistQuery && this.state.songQuery) {
           store.dispatch(fetchLyrics(this.state.artistQuery, this.state.songQuery));           
     }
@@ -49,7 +46,7 @@ export default class extends Component {
 
   render() {
     return <Lyrics
-      text={this.state.text}
+      text={this.state.lyrics.text}
       setArtist={this.handleArtistInput}
       setSong={this.handleSongInput}
       artistQuery={this.state.artistQuery}
